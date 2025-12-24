@@ -1,0 +1,21 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Expanded ignores for collaboration
+.tmp/
+export_presets.cfg
+.import/
+
+# Binary and Large Files
+*.bin
+*.gltf
+*.glb
+
+# User-specific local settings
+*.uid
+
+# Logs and System
+logs/
+.DS_Store
+Thumbs.db
