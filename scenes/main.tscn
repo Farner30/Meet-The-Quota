@@ -37,7 +37,6 @@ offset_bottom = 469.0
 data = ExtResource("2_sugp2")
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Control" type="Control" parent="HUDLayer"]
 layout_mode = 3
