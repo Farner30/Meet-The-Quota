@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsva5p6jjhyxh"]
 
-[ext_resource type="PackedScene" uid="uid://deyk78vdw2iao" path="res://document.tscn" id="1_0xm2m"]
-[ext_resource type="Resource" uid="uid://bv3pbwrtxfwc2" path="res://resources/applicant_vance.tres" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://deyk78vdw2iao" path="res://scenes/document.tscn" id="1_0wfyh"]
+[ext_resource type="Resource" uid="uid://bv3pbwrtxfwc2" path="res://resources/applicant_vance.tres" id="2_sugp2"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -28,13 +28,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Document" parent="DeskArea" instance=ExtResource("1_0xm2m")]
+[node name="Document" parent="DeskArea" instance=ExtResource("1_0wfyh")]
 layout_mode = 0
 offset_left = 415.0
 offset_top = 119.0
 offset_right = 685.0
 offset_bottom = 469.0
-data = ExtResource("2_h2yge")
+data = ExtResource("2_sugp2")
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 visible = false
