@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsva5p6jjhyxh"]
+
+[ext_resource type="PackedScene" uid="uid://deyk78vdw2iao" path="res://document.tscn" id="1_0xm2m"]
+[ext_resource type="Resource" uid="uid://bv3pbwrtxfwc2" path="res://resources/applicant_vance.tres" id="2_h2yge"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6789437, 0.6789437, 0.6789436, 1)
+
+[node name="DeskArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Document" parent="DeskArea" instance=ExtResource("1_0xm2m")]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 119.0
+offset_right = 685.0
+offset_bottom = 469.0
+data = ExtResource("2_h2yge")
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="HUDLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

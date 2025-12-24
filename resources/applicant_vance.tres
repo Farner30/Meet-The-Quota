@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ApplicantResource" load_steps=2 format=3 uid="uid://bv3pbwrtxfwc2"]
+
+[ext_resource type="Script" uid="uid://cxj7ttb77gwj8" path="res://scripts/ApplicantResource.gd" id="1_no3wv"]
+
+[resource]
+script = ExtResource("1_no3wv")
+applicant_name = "Elias Vance"
+is_unethical = true
+metadata/_custom_type_script = "uid://cxj7ttb77gwj8"

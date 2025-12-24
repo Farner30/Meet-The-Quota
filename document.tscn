@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://deyk78vdw2iao"]
+
+[ext_resource type="Script" uid="uid://25nvm2cexu2o" path="res://scripts/Document.gd" id="1_mj70b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj70b"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.95686275, 0.95686275, 0.95686275, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="Document" type="PanelContainer"]
+custom_minimum_size = Vector2(250, 350)
+offset_right = 40.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mj70b")
+script = ExtResource("1_mj70b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 3
+
+[node name="SummaryLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 3
