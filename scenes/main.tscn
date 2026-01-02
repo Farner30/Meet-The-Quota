@@ -1,15 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsva5p6jjhyxh"]
+[gd_scene load_steps=5 format=3 uid="uid://dsva5p6jjhyxh"]
 
 [ext_resource type="PackedScene" uid="uid://deyk78vdw2iao" path="res://scenes/document.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dcbl86ci6yrbn" path="res://scripts/MainGameManager.gd" id="1_sugp2"]
 [ext_resource type="Resource" uid="uid://bv3pbwrtxfwc2" path="res://resources/applicant_vance.tres" id="2_sugp2"]
 
-[node name="Main" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sugp2"]
+content_margin_left = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.17254902, 0.17254902, 0.18039216, 1)
+border_width_bottom = 4
+border_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.39215687)
+shadow_size = 3
+shadow_offset = Vector2(0, 4)
+
+[node name="Main" type="Control" node_paths=PackedStringArray("approve_zone", "deny_zone", "splash_overlay", "splash_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sugp2")
+document_scene = ExtResource("1_0wfyh")
+default_applicant = ExtResource("2_sugp2")
+approve_zone = NodePath("VBoxContainer/DeskArea/ApproveZone")
+deny_zone = NodePath("VBoxContainer/DeskArea/DenyZone")
+splash_overlay = NodePath("SplashOverlay")
+splash_label = NodePath("SplashOverlay/SplashLabel")
+splash_duration = 1.0
+summary_scene_path = "uid://dadl7qfi7u1yh"
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -20,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.6789437, 0.6789437, 0.6789436, 1)
 
-[node name="DeskArea" type="Control" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,17 +52,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Document" parent="DeskArea" instance=ExtResource("1_0wfyh")]
+[node name="InfoPanel" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sugp2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InfoPanel"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+text = "Time: 00:00"
+
+[node name="QuotaLabel" type="Label" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+text = "Quota: 0 / 5"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReceiveButton" type="Button" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Receive Application"
+
+[node name="RequestButton" type="Button" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Request Urgent Information
+"
+
+[node name="DeskArea" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ApproveZone" type="ColorRect" parent="VBoxContainer/DeskArea"]
 layout_mode = 0
-offset_left = 415.0
-offset_top = 119.0
-offset_right = 685.0
-offset_bottom = 469.0
-data = ExtResource("2_sugp2")
+offset_right = 350.0
+offset_bottom = 350.0
+color = Color(0, 1, 0, 0.19607843)
+
+[node name="DenyZone" type="ColorRect" parent="VBoxContainer/DeskArea"]
+layout_mode = 0
+offset_left = 802.0
+offset_right = 1152.0
+offset_bottom = 350.0
+color = Color(1, 0, 0, 0.19607843)
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="HUDLayer"]
+[node name="HUDContainer" type="Control" parent="HUDLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,3 +110,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="SplashOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SplashLabel" type="Label" parent="SplashOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -11.5
+offset_right = 68.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "MEET THE QUOTA"
+
+[node name="GameTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="VBoxContainer/InfoPanel/HBoxContainer/ReceiveButton" to="." method="_on_receive_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/InfoPanel/HBoxContainer/RequestButton" to="." method="_on_request_button_pressed"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]

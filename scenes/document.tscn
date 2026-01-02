@@ -40,3 +40,11 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 autowrap_mode = 3
+
+[node name="EvidenceLabel" type="Label" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hidden Evidence"
+autowrap_mode = 3

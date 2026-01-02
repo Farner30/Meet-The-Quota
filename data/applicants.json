@@ -1,0 +1,25 @@
+{
+	"applicants": [
+		{
+			"id": "jenkins",
+			"name": "Sarah Jenkins",
+			"summary": "Requesting urgent medical aid for chronic respiratory failure. Patient is a mother of two and former teacher.",
+			"is_unethical": true,
+			"evidence": "INTERNAL MEMO: Surveillance footage confirms Jenkins has been seen selling previous medical allocations at the Sector 4 Black Market."
+		},
+		{
+			"id": "valmont",
+			"name": "Clara Valmont",
+			"summary": "Standard Housing Request. Current Status: Evicted. Profile: 0 criminal record, consistent tax payer.",
+			"is_unethical": false,
+			"evidence": "CLERICAL NOTE: Application originally flagged for 'Missing Form 12-B'. Upon deeper review, the form was actually filed correctly but mislabeled."
+		},
+		{
+			"id": "kross",
+			"name": "Victor Kross",
+			"summary": "Industrial Expansion License. Applicant has donated 50,000 Credits to the City Infrastructure Fund this year.",
+			"is_unethical": true,
+			"evidence": "OFF-THE-RECORD INVESTIGATION: Kross Industrial utilizes 'unpaid labor' from the local orphanage."
+		}
+	]
+}
