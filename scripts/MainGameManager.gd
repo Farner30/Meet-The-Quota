@@ -257,7 +257,7 @@ func _on_game_timer_timeout():
 func update_ui():
 	if quota_label: quota_label.text = "Quota: %d / %d" % [current_processed, quota_goal]
 	# Only show fines (debt) during the day. Paycheck comes at summary.
-	if money_label: money_label.text = "Credits: %d" % (-total_fines)
+	if money_label: money_label.text = "Money: %d$" % (-total_fines)
 	if time_label:
 		var minutes = time_left / 60
 		var seconds = time_left % 60

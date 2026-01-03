@@ -92,7 +92,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ApproveZone" type="ColorRect" parent="VBoxContainer/DeskArea"]
-layout_mode = 0
+layout_mode = 1
 offset_right = 350.0
 offset_bottom = 350.0
 color = Color(0, 1, 0, 0.19607843)
@@ -115,10 +115,13 @@ theme_override_font_sizes/font_size = 48
 text = "APPROVE"
 
 [node name="DenyZone" type="ColorRect" parent="VBoxContainer/DeskArea"]
-layout_mode = 0
-offset_left = 802.0
-offset_right = 1152.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -350.0
 offset_bottom = 350.0
+grow_horizontal = 0
 color = Color(1, 0, 0, 0.19607843)
 
 [node name="DenyLabel" type="Label" parent="VBoxContainer/DeskArea/DenyZone"]

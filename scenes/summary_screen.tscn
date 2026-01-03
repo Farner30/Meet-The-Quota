@@ -69,6 +69,7 @@ text = "Meds"
 [node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
 text = "Confirm"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ConfirmButton" to="." method="_on_confirm_pressed"]
