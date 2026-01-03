@@ -43,8 +43,8 @@ func display_results(data: Dictionary):
 	total_net_money = data.money
 	current_balance = total_net_money
 	
-	quota_label.text = "PROCESSED: %d / %d" % [data.quota_reached, data.quota_total]
-	ethics_label.text = "MORAL ALIGNMENT: %d" % data.ethics
+	quota_label.text = "Applications Processed: %d / %d" % [data.quota_reached, data.quota_total]
+	ethics_label.text = "Moral Alignment: %d" % data.ethics
 	salary_label.text = "Salary: +$%d | Fines: -$%d" % [data.paycheck, data.fines]
 	
 	update_balance_ui()
