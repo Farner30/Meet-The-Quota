@@ -7,6 +7,10 @@
 export_presets.cfg
 .import/
 
+# Build artifacts
+
+build/
+
 # Binary and Large Files
 *.bin
 *.gltf
