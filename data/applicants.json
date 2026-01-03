@@ -1,25 +1,100 @@
 {
-	"applicants": [
-		{
-			"id": "jenkins",
-			"name": "Sarah Jenkins",
-			"summary": "Requesting urgent medical aid for chronic respiratory failure. Patient is a mother of two and former teacher.",
-			"is_unethical": true,
-			"evidence": "INTERNAL MEMO: Surveillance footage confirms Jenkins has been seen selling previous medical allocations at the Sector 4 Black Market."
-		},
-		{
-			"id": "valmont",
-			"name": "Clara Valmont",
-			"summary": "Standard Housing Request. Current Status: Evicted. Profile: 0 criminal record, consistent tax payer.",
-			"is_unethical": false,
-			"evidence": "CLERICAL NOTE: Application originally flagged for 'Missing Form 12-B'. Upon deeper review, the form was actually filed correctly but mislabeled."
-		},
-		{
-			"id": "kross",
-			"name": "Victor Kross",
-			"summary": "Industrial Expansion License. Applicant has donated 50,000 Credits to the City Infrastructure Fund this year.",
-			"is_unethical": true,
-			"evidence": "OFF-THE-RECORD INVESTIGATION: Kross Industrial utilizes 'unpaid labor' from the local orphanage."
-		}
-	]
+  "applicants": [
+	{
+	  "id": "vance",
+	  "name": "Elias Vance",
+	  "summary": "15 years experience in veterinary surgery. Impeccable references from Sector 2.",
+	  "is_unethical": true,
+	  "evidence": "POLICE RECORD: Subject has a lifetime ban on animal proximity due to 'extreme cruelty' charges in 2021.",
+	  "headline": "VETERINARY TRAGEDY: 5 dogs found dead at local clinic; new hire Elias Vance in custody."
+	},
+	{
+	  "id": "jenkins",
+	  "name": "Sarah Jenkins",
+	  "summary": "Requesting urgent oxygen filters for her children. Former educator.",
+	  "is_unethical": true,
+	  "evidence": "SURVEILLANCE: Jenkins was seen trading previous filter allocations for 'Blue-Dust' narcotics.",
+	  "headline": "STREET DRUG SURGE: Black market flooded with stolen medical grade O2 filters."
+	},
+	{
+	  "id": "kross",
+	  "name": "Victor Kross",
+	  "summary": "Industrialist seeking permit for 'The Orphanage' textile factory expansion.",
+	  "is_unethical": true,
+	  "evidence": "INSPECTOR LOG: Factory uses 12-hour shifts for minors. High injury rate reported.",
+	  "headline": "FACTORY COLLAPSE: 15 children injured in Kross Textile fire; safety permits found to be falsified."
+	},
+	{
+	  "id": "thorne",
+	  "name": "Marcus Thorne",
+	  "summary": "Seeking clearance for 'Agricultural Chemistry' lab. Order of the Golden Cog recipient.",
+	  "is_unethical": true,
+	  "evidence": "REBEL WIRE: Thorne is a senior member of the 'Free Hand' bombers. 'Agriculture' is a cover for fertilizer-based explosives.",
+	  "headline": "SECTOR 5 BOMBED: City Hall leveled in 'fertilizer' explosion. Agent Marcus Thorne at large."
+	},
+	{
+	  "id": "miller",
+	  "name": "Arthur Miller",
+	  "summary": "Housing request. Clean record, 0 debts. Profile looks perfectly safe.",
+	  "is_unethical": false,
+	  "evidence": "No red flags found. Applicant is a simple dock worker.",
+	  "headline": ""
+	},
+	{
+	  "id": "valmont",
+	  "name": "Clara Valmont",
+	  "summary": "Denied previous housing for 'Missing Form 12-B'. Re-applying with documentation.",
+	  "is_unethical": false,
+	  "evidence": "CLERICAL NOTE: The form was present in the original file but filed under the wrong tab by the previous clerk. She is 100% eligible.",
+	  "headline": ""
+	},
+	{
+	  "id": "zero",
+	  "name": "Zero (Unknown)",
+	  "summary": "Requesting access to the 'Central Data Node' for 'Essential Maintenance'.",
+	  "is_unethical": true,
+	  "evidence": "CYBER-CRIME LOG: 'Zero' is an alias for a high-level data thief. Last seen hacking the water treatment plant.",
+	  "headline": "SYSTEM WIPE: Central Data Node erased. Citizens lose all digital records and bank access."
+	},
+	{
+	  "id": "beck",
+	  "name": "Samuel Beck",
+	  "summary": "Aged 82. Requesting pension early-release for heart surgery.",
+	  "is_unethical": false,
+	  "evidence": "MEDICAL: Confirmed stage 4 heart failure. Surgery is his only chance.",
+	  "headline": ""
+	},
+	{
+	  "id": "grave",
+	  "name": "Elara Grave",
+	  "summary": "Requesting permit to build a 'Community Garden' on the old Sector 3 waste site.",
+	  "is_unethical": true,
+	  "evidence": "GEOLOGIC SCAN: Site is highly radioactive. A 'Garden' would poison anyone eating the crops.",
+	  "headline": "TOXIC HARVEST: Hundreds sickened by radioactive lead-leached crops from Sector 3 garden."
+	},
+	{
+	  "id": "stern",
+	  "name": "Captain Stern",
+	  "summary": "Security renewal for the 'Wall Patrol'. Decorated officer.",
+	  "is_unethical": true,
+	  "evidence": "INTERNAL AFFAIRS: Stern takes bribes from smugglers to open Gate 9 at midnight.",
+	  "headline": "BORDER BREACH: Gate 9 left open by Patrol; smuggling ring found to have paid off high-ranking officer."
+	},
+	{
+	  "id": "hollow",
+	  "name": "Thomas Hollow",
+	  "summary": "Dock worker requesting leave due to 'unknown respiratory illness'.",
+	  "is_unethical": false,
+	  "evidence": "LAB REPORT: Highly contagious 'Steel-Lung' virus detected. Denying him would keep him on the docks, spreading it to thousands.",
+	  "headline": ""
+	},
+	{
+	  "id": "vane",
+	  "name": "Lydia Vane",
+	  "summary": "Artist requesting permit to paint 'Murals of Unity' across the city.",
+	  "is_unethical": true,
+	  "evidence": "PSYCH EVAL: Murals contain subliminal hypnotic triggers designed to cause mass public hysteria on command.",
+	  "headline": "RIOTS IN THE STREET: Subliminal 'Murals' trigger city-wide frenzy; Sector 2 in flames."
+	}
+  ]
 }

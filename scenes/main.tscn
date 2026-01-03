@@ -68,6 +68,10 @@ text = "Time: 00:00"
 layout_mode = 2
 text = "Quota: 0 / 5"
 
+[node name="MoneyLabel" type="Label" parent="VBoxContainer/InfoPanel/HBoxContainer"]
+layout_mode = 2
+text = "Money: 0$"
+
 [node name="Spacer" type="Control" parent="VBoxContainer/InfoPanel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -93,12 +97,46 @@ offset_right = 350.0
 offset_bottom = 350.0
 color = Color(0, 1, 0, 0.19607843)
 
+[node name="ApproveLabel" type="Label" parent="VBoxContainer/DeskArea/ApproveZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -11.5
+offset_right = 36.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.29411766)
+theme_override_font_sizes/font_size = 48
+text = "APPROVE"
+
 [node name="DenyZone" type="ColorRect" parent="VBoxContainer/DeskArea"]
 layout_mode = 0
 offset_left = 802.0
 offset_right = 1152.0
 offset_bottom = 350.0
 color = Color(1, 0, 0, 0.19607843)
+
+[node name="DenyLabel" type="Label" parent="VBoxContainer/DeskArea/DenyZone"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -11.5
+offset_right = 36.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.29411766)
+theme_override_font_sizes/font_size = 48
+text = "DENY"
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
