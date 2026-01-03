@@ -6,7 +6,7 @@ extends Control
 @onready var salary_label = $MarginContainer/VBoxContainer/SalaryBreakdownLabel
 @onready var balance_label = $MarginContainer/VBoxContainer/BalanceLabel
 
-# Interactive Checkboxes (Ensure these names match your scene tree)
+# Interactive Checkboxes
 @onready var rent_check = $MarginContainer/VBoxContainer/RentCheck
 @onready var food_check = $MarginContainer/VBoxContainer/FoodCheck
 @onready var meds_check = $MarginContainer/VBoxContainer/MedsCheck
@@ -25,12 +25,18 @@ const MEDS_COST = 40
 
 func _ready():
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	confirm_button.pressed.connect(_on_confirm_pressed)
 	
-	# Connect checkbox toggles
-	rent_check.toggled.connect(_on_expense_toggled.bind(RENT_COST))
-	food_check.toggled.connect(_on_expense_toggled.bind(FOOD_COST))
-	meds_check.toggled.connect(_on_expense_toggled.bind(MEDS_COST))
+	# Safety Check: Only connect if not already connected via the Editor
+	if not confirm_button.pressed.is_connected(_on_confirm_pressed):
+		confirm_button.pressed.connect(_on_confirm_pressed)
+	
+	# Connect checkbox toggles with safety checks
+	if not rent_check.toggled.is_connected(_on_expense_toggled):
+		rent_check.toggled.connect(_on_expense_toggled.bind(RENT_COST))
+	if not food_check.toggled.is_connected(_on_expense_toggled):
+		food_check.toggled.connect(_on_expense_toggled.bind(FOOD_COST))
+	if not meds_check.toggled.is_connected(_on_expense_toggled):
+		meds_check.toggled.connect(_on_expense_toggled.bind(MEDS_COST))
 
 func display_results(data: Dictionary):
 	summary_data = data
@@ -43,8 +49,7 @@ func display_results(data: Dictionary):
 	
 	update_balance_ui()
 
-func _on_expense_toggled(_is_on: bool, cost: int):
-	# Calculate total cost of currently checked boxes
+func _on_expense_toggled(_is_on: bool, _cost: int):
 	var total_selected_cost = 0
 	if rent_check.button_pressed: total_selected_cost += RENT_COST
 	if food_check.button_pressed: total_selected_cost += FOOD_COST
@@ -56,19 +61,16 @@ func _on_expense_toggled(_is_on: bool, cost: int):
 func update_balance_ui():
 	balance_label.text = "Remaining Balance: $%d" % current_balance
 	
-	# Disable checkboxes that player can't afford if they aren't already checked
 	rent_check.disabled = not rent_check.button_pressed and current_balance < RENT_COST
 	food_check.disabled = not food_check.button_pressed and current_balance < FOOD_COST
 	meds_check.disabled = not meds_check.button_pressed and current_balance < MEDS_COST
 	
-	# Visual warning if negative (shouldn't happen with the disable logic, but for safety)
 	if current_balance < 0:
 		balance_label.modulate = Color.RED
 	else:
 		balance_label.modulate = Color.WHITE
 
 func _on_confirm_pressed():
-	# Pass the final allocation results and the headlines to the narrative screen
 	var final_allocation = {
 		"rent": rent_check.button_pressed,
 		"food": food_check.button_pressed,
